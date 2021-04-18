@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+TABLE: {{ store_data }}
+
+<table>
+  <tr>
+    <th>First Name</th>
+    <th>Second Name</th>
+    <th>Phone Number</th>
+  </tr>
+    {% for i in table %}
+  <tr>
+    <td>{{i.0}}</td>
+    <td>{{i.1}}</td>
+    <td>{{i.2}}</td>
+  </tr>
+    {% endfor %}
+</table>
+{% endblock %}
