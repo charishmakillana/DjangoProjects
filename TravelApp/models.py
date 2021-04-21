@@ -11,4 +11,5 @@ class Registration(models.Model):
     )
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
     email = models.EmailField()
-    phonenumber = models.IntegerField(max_length=12)
+    phonenumber = models.CharField(max_length=15)
+

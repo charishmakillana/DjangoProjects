@@ -36,17 +36,20 @@
                 <div class="card-body">
                     <h2 class="title">Registration Form</h2>
                     <form method="POST">
+                            {% csrf_token %}
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">first name</label>
                                     <input class="input--style-4" type="text" name="first_name">
+                                    <div><span>{{ form.first_name.errors.as_text}}</span></div>
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">last name</label>
                                     <input class="input--style-4" type="text" name="last_name">
+                                    <div><span>{{ form.last_name.errors.as_text}}</span></div>
                                 </div>
                             </div>
                         </div>
@@ -59,6 +62,7 @@
                                         <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
                                     </div>
                                 </div>
+                                <div><span>{{ form.birthday.errors.as_text}}</span></div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
@@ -74,6 +78,7 @@
                                         </label>
                                     </div>
                                 </div>
+                                <div><span>{{ form.gender.errors.as_text}}</span></div>
                             </div>
                         </div>
                         <div class="row row-space">
@@ -81,12 +86,15 @@
                                 <div class="input-group">
                                     <label class="label">Email</label>
                                     <input class="input--style-4" type="email" name="email">
+                                    <div><span>{{ form.email.errors.as_text}}</span></div>
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Phone Number</label>
-                                    <input class="input--style-4" type="text" name="phone">
+                                    <input class="input--style-4" type="text" name="phone_number">
+<!--                                    <div class="input&#45;&#45;style-4"> {{ form.phone_number }}> </div>-->
+                                    <div><span>{{ form.phone_number.errors.as_text}}</span></div>
                                 </div>
                             </div>
                         </div>
@@ -101,6 +109,7 @@
                                 </select>
                                 <div class="select-dropdown"></div>
                             </div>
+                            <div><span>{{ form.subject.errors.as_text}}</span></div>
                         </div>
                         <div class="p-t-15">
                             <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
@@ -112,7 +121,7 @@
     </div>
 
     <!-- Jquery JS-->
-    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Vendor JS-->
     <script src="{% static 'vendor/select2/select2.min.js' %}"></script>
     <script src="{% static 'vendor/datepicker/moment.min.js' %}"></script>
